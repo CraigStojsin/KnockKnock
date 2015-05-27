@@ -16,6 +16,8 @@
 		390BF06D1B150234008656E3 /* KnockKnockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BF06C1B150234008656E3 /* KnockKnockTests.swift */; };
 		390BF07B1B150B01008656E3 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 390BF07A1B150B01008656E3 /* Accounts.framework */; };
 		390BF07D1B150B07008656E3 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 390BF07C1B150B07008656E3 /* Social.framework */; };
+		390BF08D1B1602A2008656E3 /* MatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BF08C1B1602A2008656E3 /* MatchesView.swift */; };
+		390BF08F1B1602C0008656E3 /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BF08E1B1602C0008656E3 /* DraggableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,8 @@
 		390BF07A1B150B01008656E3 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		390BF07C1B150B07008656E3 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		390BF0891B150ED7008656E3 /* ObjectiveCBridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjectiveCBridging.h; sourceTree = "<group>"; };
+		390BF08C1B1602A2008656E3 /* MatchesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchesView.swift; sourceTree = "<group>"; };
+		390BF08E1B1602C0008656E3 /* DraggableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
 		95EBFD411A23995BF94D9219 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E9BD04CDABE430FC24A41680 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -104,6 +108,8 @@
 				390BF0561B150234008656E3 /* AppDelegate.swift */,
 				390BF0581B150234008656E3 /* ViewController.swift */,
 				390BF05A1B150234008656E3 /* Main.storyboard */,
+				390BF08C1B1602A2008656E3 /* MatchesView.swift */,
+				390BF08E1B1602C0008656E3 /* DraggableView.swift */,
 				390BF05D1B150234008656E3 /* Images.xcassets */,
 				390BF05F1B150234008656E3 /* LaunchScreen.xib */,
 				390BF0541B150234008656E3 /* Supporting Files */,
@@ -283,6 +289,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				390BF0591B150234008656E3 /* ViewController.swift in Sources */,
+				390BF08D1B1602A2008656E3 /* MatchesView.swift in Sources */,
+				390BF08F1B1602C0008656E3 /* DraggableView.swift in Sources */,
 				390BF0571B150234008656E3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

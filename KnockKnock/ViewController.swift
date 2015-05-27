@@ -42,56 +42,83 @@ let permissions = ["public_profile","email","user_friends"]
         }
         else {
 
-            PFFacebookUtils.logInInBackgroundWithAccessToken(result.token, block: {
+            PFFacebookUtils.logInInBackgroundWithAccessToken(result.token, block:{
+                
                 (user: PFUser?, error: NSError?) -> Void in
-                if user != nil {
-                    println("User logged in through Facebook!")
-                } else {
-                    println("Uh oh. There was an error logging in.")
-                }
-            })
-            
-                    println("Uh oh. The user cancelled the Facebook login.")
-        }
-        
-            // If you ask for multiple permissions at once, you
-            // should check if specific permissions missing
-            if result.grantedPermissions.contains("email")
-            {
-                // Do work
-            }
-        }
-    
+                
+                if let user = user {
+                    
+                    if user.isNew {
+                        
+                        
+                        println("User signed up and logged in through Facebook!")
+                    } else {
+                        println("User logged in through Facebook!")
+                    
+                        
+                        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
+                        graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
+                            
+                            if ((error) != nil)
+                            {
+                                
+                                
+                                // Process error
+                                println("Error: \(error)")
+                            }
+                            else
+                            {
+                                println("fetched user: \(result)")
+                                user["name"] = result.valueForKey("name")
+                                println("User Name is: \(user)")
+                                
+//                                user["email"] = result.valueForKey("email")
+//                                println("User Email is: \(userEmail)")
+                                
+                                user.saveInBackground()
+                                
+                                
+                                
+                            }
+                        })
 
+                        
+                    }
+                    
+                    
+                    
+                } else {
+                    println("Uh oh. The user cancelled the Facebook login.")
+                }
+                
+                })
+        }
+    }
+    
+//            // If you ask for multiple permissions at once, you
+//            // should check if specific permissions missing
+//            if result.grantedPermissions.contains("email")
+//            {
+                // Do work
+    
+        
+        
+    
+    
+            
+            
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!)
     {
         PFUser.logOut()
     }
     
-    func returnUserData()
-    {
-        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
-        graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
-            
-            if ((error) != nil)
-            {
-                // Process error
-                println("Error: \(error)")
-            }
-            else
-            {
-                println("fetched user: \(result)")
-                let userName : NSString = result.valueForKey("name") as! NSString
-                println("User Name is: \(userName)")
-                let userEmail : NSString = result.valueForKey("email") as! NSString
-                println("User Email is: \(userEmail)")
-            }
-        })
-    }
-
 
     
+
 }
+
+    
+
 
 
 
