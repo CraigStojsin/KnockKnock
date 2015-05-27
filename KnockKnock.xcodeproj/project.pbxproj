@@ -18,6 +18,11 @@
 		390BF07D1B150B07008656E3 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 390BF07C1B150B07008656E3 /* Social.framework */; };
 		390BF08D1B1602A2008656E3 /* MatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BF08C1B1602A2008656E3 /* MatchesView.swift */; };
 		390BF08F1B1602C0008656E3 /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BF08E1B1602C0008656E3 /* DraggableView.swift */; };
+		390BF0931B1614FB008656E3 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BF0921B1614FB008656E3 /* Settings.swift */; };
+		390BF0951B16156E008656E3 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BF0941B16156E008656E3 /* Chat.swift */; };
+		390BF0971B16157E008656E3 /* ChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BF0961B16157E008656E3 /* ChatManager.swift */; };
+		390BF0991B161599008656E3 /* MatchesProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BF0981B161599008656E3 /* MatchesProfile.swift */; };
+		390BF09B1B1615A6008656E3 /* MyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BF09A1B1615A6008656E3 /* MyProfile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,11 @@
 		390BF0891B150ED7008656E3 /* ObjectiveCBridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjectiveCBridging.h; sourceTree = "<group>"; };
 		390BF08C1B1602A2008656E3 /* MatchesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchesView.swift; sourceTree = "<group>"; };
 		390BF08E1B1602C0008656E3 /* DraggableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
+		390BF0921B1614FB008656E3 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		390BF0941B16156E008656E3 /* Chat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		390BF0961B16157E008656E3 /* ChatManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatManager.swift; sourceTree = "<group>"; };
+		390BF0981B161599008656E3 /* MatchesProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchesProfile.swift; sourceTree = "<group>"; };
+		390BF09A1B1615A6008656E3 /* MyProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfile.swift; sourceTree = "<group>"; };
 		95EBFD411A23995BF94D9219 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E9BD04CDABE430FC24A41680 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -85,6 +95,8 @@
 		390BF0481B150234008656E3 = {
 			isa = PBXGroup;
 			children = (
+				390BF0911B16128C008656E3 /* Controllers */,
+				390BF0901B161278008656E3 /* Model */,
 				390BF0531B150234008656E3 /* KnockKnock */,
 				390BF0691B150234008656E3 /* KnockKnockTests */,
 				390BF0521B150234008656E3 /* Products */,
@@ -106,10 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				390BF0561B150234008656E3 /* AppDelegate.swift */,
-				390BF0581B150234008656E3 /* ViewController.swift */,
 				390BF05A1B150234008656E3 /* Main.storyboard */,
-				390BF08C1B1602A2008656E3 /* MatchesView.swift */,
-				390BF08E1B1602C0008656E3 /* DraggableView.swift */,
 				390BF05D1B150234008656E3 /* Images.xcassets */,
 				390BF05F1B150234008656E3 /* LaunchScreen.xib */,
 				390BF0541B150234008656E3 /* Supporting Files */,
@@ -141,6 +150,30 @@
 				390BF06B1B150234008656E3 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		390BF0901B161278008656E3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				390BF0921B1614FB008656E3 /* Settings.swift */,
+			);
+			name = Model;
+			path = KnockKnock;
+			sourceTree = "<group>";
+		};
+		390BF0911B16128C008656E3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				390BF08C1B1602A2008656E3 /* MatchesView.swift */,
+				390BF08E1B1602C0008656E3 /* DraggableView.swift */,
+				390BF0961B16157E008656E3 /* ChatManager.swift */,
+				390BF09A1B1615A6008656E3 /* MyProfile.swift */,
+				390BF0981B161599008656E3 /* MatchesProfile.swift */,
+				390BF0941B16156E008656E3 /* Chat.swift */,
+				390BF0581B150234008656E3 /* ViewController.swift */,
+			);
+			name = Controllers;
+			path = KnockKnock;
 			sourceTree = "<group>";
 		};
 		6835D8DDAD89B69DF1193077 /* Pods */ = {
@@ -289,9 +322,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				390BF0591B150234008656E3 /* ViewController.swift in Sources */,
+				390BF09B1B1615A6008656E3 /* MyProfile.swift in Sources */,
+				390BF0951B16156E008656E3 /* Chat.swift in Sources */,
 				390BF08D1B1602A2008656E3 /* MatchesView.swift in Sources */,
 				390BF08F1B1602C0008656E3 /* DraggableView.swift in Sources */,
+				390BF0971B16157E008656E3 /* ChatManager.swift in Sources */,
+				390BF0991B161599008656E3 /* MatchesProfile.swift in Sources */,
 				390BF0571B150234008656E3 /* AppDelegate.swift in Sources */,
+				390BF0931B1614FB008656E3 /* Settings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
