@@ -17,7 +17,6 @@
 		390BF07B1B150B01008656E3 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 390BF07A1B150B01008656E3 /* Accounts.framework */; };
 		390BF07D1B150B07008656E3 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 390BF07C1B150B07008656E3 /* Social.framework */; };
 		390BF08D1B1602A2008656E3 /* MatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BF08C1B1602A2008656E3 /* MatchesView.swift */; };
-		390BF08F1B1602C0008656E3 /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BF08E1B1602C0008656E3 /* DraggableView.swift */; };
 		390BF0931B1614FB008656E3 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BF0921B1614FB008656E3 /* Settings.swift */; };
 		390BF0951B16156E008656E3 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BF0941B16156E008656E3 /* Chat.swift */; };
 		390BF0971B16157E008656E3 /* ChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BF0961B16157E008656E3 /* ChatManager.swift */; };
@@ -51,7 +50,6 @@
 		390BF07C1B150B07008656E3 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		390BF0891B150ED7008656E3 /* ObjectiveCBridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjectiveCBridging.h; sourceTree = "<group>"; };
 		390BF08C1B1602A2008656E3 /* MatchesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchesView.swift; sourceTree = "<group>"; };
-		390BF08E1B1602C0008656E3 /* DraggableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
 		390BF0921B1614FB008656E3 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		390BF0941B16156E008656E3 /* Chat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		390BF0961B16157E008656E3 /* ChatManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatManager.swift; sourceTree = "<group>"; };
@@ -165,7 +163,6 @@
 			isa = PBXGroup;
 			children = (
 				390BF08C1B1602A2008656E3 /* MatchesView.swift */,
-				390BF08E1B1602C0008656E3 /* DraggableView.swift */,
 				390BF0961B16157E008656E3 /* ChatManager.swift */,
 				390BF09A1B1615A6008656E3 /* MyProfile.swift */,
 				390BF0981B161599008656E3 /* MatchesProfile.swift */,
@@ -325,7 +322,6 @@
 				390BF09B1B1615A6008656E3 /* MyProfile.swift in Sources */,
 				390BF0951B16156E008656E3 /* Chat.swift in Sources */,
 				390BF08D1B1602A2008656E3 /* MatchesView.swift in Sources */,
-				390BF08F1B1602C0008656E3 /* DraggableView.swift in Sources */,
 				390BF0971B16157E008656E3 /* ChatManager.swift in Sources */,
 				390BF0991B161599008656E3 /* MatchesProfile.swift in Sources */,
 				390BF0571B150234008656E3 /* AppDelegate.swift in Sources */,

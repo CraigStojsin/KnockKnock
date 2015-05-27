@@ -8,28 +8,45 @@
 
 import UIKit
 
+
 class ViewController: UIViewController, FBSDKLoginButtonDelegate  {
 let permissions = ["public_profile","email","user_friends"]
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let loginButton:FBSDKLoginButton = FBSDKLoginButton()
-        loginButton.center = self.view.center
-        loginButton.delegate = self
-        loginButton.readPermissions = ["public_profile","email","user_friends"]
-        self.view.addSubview(loginButton)
         
-     
+      
+    
+    
         
         // Do any additional setup after loading the view, typically from a nib.
+    }
+   
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        
+        if (FBSDKAccessToken.currentAccessToken() != nil)
+            {
+                // User is already logged in, do work such as go to next view controller.
+                presentViewController(MatchesView(), animated: true, completion: nil)
+        }
+        else
+        {
+            let loginButton:FBSDKLoginButton = FBSDKLoginButton()
+            loginButton.center = self.view.center
+            loginButton.delegate = self
+            loginButton.readPermissions = ["public_profile","email","user_friends"]
+            self.view.addSubview(loginButton)
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
+  
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!)
     {
         
@@ -76,6 +93,7 @@ let permissions = ["public_profile","email","user_friends"]
 //                                println("User Email is: \(userEmail)")
                                 
                                 user.saveInBackground()
+                        self.presentViewController(MatchesView(), animated: false, completion: nil)
                                 
                                 
                                 

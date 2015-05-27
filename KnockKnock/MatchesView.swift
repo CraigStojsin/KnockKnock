@@ -4,25 +4,30 @@ import Foundation
 class MatchesView: UIViewController {
     var xFromCenter:CGFloat = 0
     var imageView: UIImageView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+      
+        
+  
     
-    
-    
-    imageView = UIImageView(frame: CGRectMake(self.view.bounds.width / 2 - 100, self.view.bounds.height / 2 - 50 , 200, 100))
+    imageView = UIImageView(frame: CGRectMake(self.view.bounds.width / 2 - 100, self.view.bounds.height / 2 - 50 , 200, 200))
     // default image for user
     imageView.image = UIImage(named: "frame")
+        view.backgroundColor = UIColor.whiteColor()
     // adding a corner radius to the image
     imageView.layer.cornerRadius = imageView.frame.size.width / 2
     imageView.clipsToBounds = true
         self.view.addSubview(imageView)
         
-        var gesture = UIPanGestureRecognizer(target: self, action: Selector("wasDragged"))
+        var gesture = UIPanGestureRecognizer(target: self, action: Selector("wasDragged:"))
         imageView.addGestureRecognizer(gesture)
         imageView.userInteractionEnabled = true
         
     }
+    
+
+    
     
     func wasDragged(gesture:UIPanGestureRecognizer){
       let translation = gesture.translationInView(self.view)
@@ -55,7 +60,7 @@ class MatchesView: UIViewController {
             scale = max(abs(xFromCenter) / 100, 1)
             // undo rotations
             rotation = CGAffineTransformMakeRotation(0)
-            imageView.frame = (frame :CGRectMake(self.view.bounds.width / 2 - 100, self.view.bounds.height / 2 - 50, 200, 100))
+            imageView.frame = (frame :CGRectMake(self.view.bounds.width / 2 - 100, self.view.bounds.height / 2 - 50, 200, 200))
             
             
         }
@@ -64,6 +69,9 @@ class MatchesView: UIViewController {
     
     
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
     
     
     
