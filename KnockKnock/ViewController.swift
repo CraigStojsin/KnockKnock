@@ -10,7 +10,7 @@ import UIKit
 
 
 class ViewController: UIViewController, FBSDKLoginButtonDelegate  {
-let permissions = ["public_profile","email","user_friends"]
+let permissions = ["public_profile","user_friends"]
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -63,9 +63,9 @@ let permissions = ["public_profile","email","user_friends"]
                 
                 (user: PFUser?, error: NSError?) -> Void in
                 
-                if let user = user {
+                if let parseUser = user {
                     
-                    if user.isNew {
+                    if parseUser.isNew {
                         
                         
                         println("User signed up and logged in through Facebook!")
@@ -73,7 +73,7 @@ let permissions = ["public_profile","email","user_friends"]
                         println("User logged in through Facebook!")
                     
                         
-                        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
+                        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me?fields=id,name,picture.type(square).width(300).height(300)", parameters: nil)
                         graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
                             
                             if ((error) != nil)
@@ -86,13 +86,21 @@ let permissions = ["public_profile","email","user_friends"]
                             else
                             {
                                 println("fetched user: \(result)")
-                                user["name"] = result.valueForKey("name")
-                                println("User Name is: \(user)")
+                                parseUser["name"] = result.valueForKey("name")
+                                println("User Name is: \(parseUser)")
+                                //  Sort through the picture Dictionary to retreive the URL
+                                let userPicture = result.valueForKey("picture") as? NSDictionary
+                                let userPictureData = userPicture!.valueForKey("data") as? NSDictionary
+                                let userPictureURL = userPictureData!.valueForKey("url") as? String
+                                //println("The url is \(userPictureURL)")
+                                
+                                parseUser["photoURL"] = userPictureURL
+                                
                                 
 //                                user["email"] = result.valueForKey("email")
 //                                println("User Email is: \(userEmail)")
                                 
-                                user.saveInBackground()
+                                parseUser.saveInBackground()
                         self.presentViewController(MatchesView(), animated: false, completion: nil)
                                 
                                 
